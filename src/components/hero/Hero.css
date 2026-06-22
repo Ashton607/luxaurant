@@ -65,7 +65,10 @@
 
 .line2 {
   font-family: 'Abril Fatface', serif;
-  color: #C97A3A;
+  background: linear-gradient(135deg, #773600, #C97A3A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   text-align: center;
   opacity: 0;
 }
@@ -77,7 +80,10 @@
 .hero-subtitle {
   font-size: 1rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.8);
+  background: linear-gradient(135deg, #ffffff, #ffd3af);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   letter-spacing: 0.04em;
   line-height: 1.8;
   text-align: center;
@@ -166,7 +172,10 @@
 .review-text-2,
 .review-text-3 {
   font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.85);
+  background: linear-gradient(135deg, #ffffff, #ffd3af);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   line-height: 1.7;
   margin-bottom: 0.75rem;
   opacity: 0;

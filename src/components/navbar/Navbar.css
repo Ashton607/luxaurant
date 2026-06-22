@@ -6,7 +6,7 @@ nav {
   height: 10vh;
   z-index: 100;
   display: flex;          
-  align-items: center;    
+  align-items: center;     
 }
 
 nav ul {
@@ -16,7 +16,33 @@ nav ul {
   position: absolute;
   left: 50%;
   transform: translateX(-50%); 
-  color: white;
+}
+nav ul li {
+  font-size: 0.885rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #ffffff, #ffd4b1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+nav ul li::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: #C97A3A;
+  transition: width 0.3s ease;
+}
+
+nav ul li:hover::after {
+  width: 100%;
 }
 nav h2 {
   font-size: 20px;
@@ -28,4 +54,11 @@ nav h2 {
 
 nav span{
     color: #C97A3A;
+}
+
+
+/* ------------------sticky navbar------------------ */
+.blur-nav{
+    backdrop-filter: blur(10px);
+    transition: ease-in-out 0.5s;
 }
