@@ -1,18 +1,17 @@
 import { useState } from 'react'
 import './App.css'
-import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import Hero from './components/hero/Hero'
 import Navbar from './components/navbar/Navbar'
+import Menu from './components/menu/Menu'
 
 function App() {
 
   return (
-    <Router>
-      <Navbar/>
-      <Routes>
-        <Route path="/" element={<Hero/>} />
-      </Routes>
-    </Router>
+   <>
+    <Navbar/>
+      <Hero/>
+      <Menu/>
+   </>
   )
 }
 
