@@ -43,9 +43,8 @@ const Menu = () => {
 
         <h1 className="menu-title">Crafted with <span>Intention</span></h1>
 
-        <p className="menu-subtitle">Seasonal ingredients, old-world technique, and a kitchen that has
-            nothing to prove.
-        </p>
+        <p className="menu-subtitle">Skip the wait! Browse our menu of gourmet burgers, pizzas, fresh pastries, and milkshakes, 
+         text us your order, and collect it hot.</p>
 
         <div className="menu-categories">
           <ul>
