@@ -3,6 +3,38 @@ import './Menu.css'
 
 const Menu = () => {
   const [activeTab, setActiveTab] = useState('pizzas');
+
+
+  useEffect(() => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const span = entry.target.querySelector('.menu-badge')
+          const h2 = entry.target.querySelector('.menu-title')
+          const p = entry.target.querySelector('.menu-subtitle')
+          const ul = entry.target.querySelector('.menu-categories ul')
+          
+          if (entry.isIntersecting) {
+            span.classList.add('animate-in');
+            h2.classList.add('animate-in');
+            p.classList.add('animate-in');
+            ul.classList.add('animate-in');
+          } else {
+            span.classList.remove('animate-in');
+            h2.classList.remove('animate-in');
+            p.classList.remove('animate-in');
+            ul.classList.remove('animate-in');
+          }
+        });
+      }, { threshold: 0.1 });
+    
+      const MenuContent = document.querySelector('.menu-content');
+      if (MenuContent) {
+        observer.observe(MenuContent);
+      }
+    
+      return () => observer.disconnect();
+    }, []);
+
   return (
     <div className='Menu'>
       
