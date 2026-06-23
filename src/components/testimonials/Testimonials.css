@@ -1,0 +1,132 @@
+.Testimonials {
+  width: 100%;
+  min-height: 100vh;
+  padding: 6rem 2rem;
+  box-sizing: border-box;
+  background: radial-gradient(ellipse at center, #3d1f0f 0%, #1e0e07 40%, #0a0503 100%);
+}
+
+.testimonial-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.testimonial-badge{
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  background: linear-gradient(135deg, #ffe0c7, #ee954c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+.testimonial-badge::before,
+.testimonial-badge::after{
+  content: '';
+  width: 40px;
+  height: 0.5px;
+  background-color: #C97A3A;
+  opacity: 0.6;
+}
+
+.testimonial-subtitle{
+  font-size: 1.5rem;
+  font-weight: 400;
+  background: linear-gradient(135deg, #ffffff, #C97A3A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.8;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.testimonial-title{
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  font-weight: 500;
+  color: #f5f0eb;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+}
+.testimonial-title span{
+    background: linear-gradient(135deg, #773600, #C97A3A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: 'Playfair Display', serif;
+}
+
+/*Reviews*/
+.review-expand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #C97A3A;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  border: 0.5px solid rgba(201, 122, 58, 0.4);
+  padding: 8px 20px;
+  border-radius: 999px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.review-expand:hover {
+  background: rgba(201, 122, 58, 0.1);
+}
+
+/* review grid */
+.testimonial-reviews {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-height: 400px;
+  overflow: hidden;
+  transition: max-height 0.6s ease;
+}
+
+.testimonial-reviews.expanded {
+  max-height: 2000px;
+}
+
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 0.5px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: left;
+  transition: border 0.3s ease;
+}
+
+.testimonial-card:hover {
+  border-color: rgba(201, 122, 58, 0.3);
+}
+
+.testimonial-stars {
+  color: #C97A3A;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.1em;
+}
+
+.testimonial-text {
+  font-size: 0.88rem;
+  color: rgba(245, 240, 235, 0.8);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.testimonial-author {
+  font-size: 0.78rem;
+  color: #C97A3A;
+  letter-spacing: 0.06em;
+}

@@ -9,18 +9,18 @@ const Menu = () => {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           const span = entry.target.querySelector('.menu-badge')
-          const h2 = entry.target.querySelector('.menu-title')
+          const h1 = entry.target.querySelector('.menu-title')
           const p = entry.target.querySelector('.menu-subtitle')
           const ul = entry.target.querySelector('.menu-categories ul')
           
           if (entry.isIntersecting) {
             span.classList.add('animate-in');
-            h2.classList.add('animate-in');
+            h1.classList.add('animate-in');
             p.classList.add('animate-in');
             ul.classList.add('animate-in');
           } else {
             span.classList.remove('animate-in');
-            h2.classList.remove('animate-in');
+            h1.classList.remove('animate-in');
             p.classList.remove('animate-in');
             ul.classList.remove('animate-in');
           }
@@ -41,7 +41,7 @@ const Menu = () => {
       <div className="menu-content">
         <span className="menu-badge">our menu</span>
 
-        <h2 className="menu-title">Crafted with <span>Intention</span></h2>
+        <h1 className="menu-title">Crafted with <span>Intention</span></h1>
 
         <p className="menu-subtitle">Seasonal ingredients, old-world technique, and a kitchen that has
             nothing to prove.
