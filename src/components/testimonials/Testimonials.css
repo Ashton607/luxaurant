@@ -27,6 +27,10 @@
   letter-spacing: 0.2em;
   text-transform: uppercase;
   margin-bottom: 1.5rem;
+  opacity: 0;
+}
+.testimonial-badge.animate-in{
+    animation: fallBounce 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 .testimonial-badge::before,
 .testimonial-badge::after{
@@ -47,6 +51,11 @@
   line-height: 1.8;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  opacity: 0;
+}
+.testimonial-subtitle.animate-in{
+    animation: fallBounce 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    animation-delay: 0.1s;
 }
 .testimonial-title{
   font-family: 'Playfair Display', serif;
@@ -56,6 +65,11 @@
   letter-spacing: 0.04em;
   line-height: 1.2;
   margin-bottom: 1.2rem;
+  opacity: 0;
+}
+.testimonial-title.animate-in{
+    animation: fallBounce 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    animation-delay: 0.2s;
 }
 .testimonial-title span{
     background: linear-gradient(135deg, #773600, #C97A3A);
@@ -63,6 +77,16 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   font-family: 'Playfair Display', serif;
+}
+@keyframes fallBounce {
+  0% {
+        opacity: 0;
+        transform: translateY(-200px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /*Reviews*/
@@ -78,6 +102,11 @@
   padding: 8px 20px;
   border-radius: 999px;
   transition: background 0.3s ease, color 0.3s ease;
+  opacity: 0;
+}
+.review-expand.animate-in{
+    animation: fallBounce 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    animation-delay: 0.3s;
 }
 
 .review-expand:hover {

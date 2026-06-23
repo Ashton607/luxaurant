@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import './Testimonials.css'
 import { FaArrowRight, FaArrowDown } from "react-icons/fa6";
 
@@ -17,6 +17,36 @@ const Testimonials = () => {
   const [expanded, setExpanded] = useState(false)
 
   const visibleReviews = expanded ? reviews : reviews.slice(0, 4)
+
+  useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            const span = entry.target.querySelector('.testimonial-badge')
+            const h1 = entry.target.querySelector('.testimonial-title')
+            const p = entry.target.querySelector('.testimonial-subtitle')
+            const expand = entry.target.querySelector('.review-expand')
+            
+            if (entry.isIntersecting) {
+              span.classList.add('animate-in');
+              h1.classList.add('animate-in');
+              p.classList.add('animate-in');
+              expand.classList.add('animate-in');
+            } else {
+              span.classList.remove('animate-in');
+              h1.classList.remove('animate-in');
+              p.classList.remove('animate-in');
+              expand.classList.remove('animate-in');
+            }
+          });
+        }, { threshold: 0.1 });
+      
+        const TestimonialContent = document.querySelector('.testimonial-content');
+        if (TestimonialContent) {
+          observer.observe(TestimonialContent);
+        }
+      
+        return () => observer.disconnect();
+      }, []);
 
   return (
     <div className='Testimonials'>
