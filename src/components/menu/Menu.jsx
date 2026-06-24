@@ -41,9 +41,9 @@ const Menu = () => {
       <div className="menu-content">
         <span className="menu-badge">our menu</span>
 
-        <h1 className="menu-title">Crafted with <span>Intention</span></h1>
+        <h1 className="menu-title">The Best Takeaway Food in<span> Douglas</span></h1>
 
-        <p className="menu-subtitle">Skip the wait! Browse our menu of gourmet burgers, pizzas, fresh pastries, and milkshakes, 
+        <p className="menu-subtitle">Skip the wait! Browse our menu of gourmet burgers, pizzas, fresh baked chips, and milkshakes, 
          text us your order, and collect it hot.</p>
 
         <div className="menu-categories">
