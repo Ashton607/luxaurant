@@ -1,10 +1,32 @@
-import React from 'react'
+import { useState } from 'react'
 import './Contact.css'
 import { IoLocationOutline, IoTimeOutline, IoCallOutline } from 'react-icons/io5'
 import { SiGmail } from "react-icons/si";
 import { FaWhatsapp } from "react-icons/fa";
 
 const Contact = () => {
+  const [fullName, setFullName] = useState('')
+  const [contactDetails, setContactDetails] = useState('')
+  const [foodOrder, setFoodOrder] = useState('')
+  const [drinks, setDrinks] = useState('')
+  const [dessert, setDessert] = useState('')
+  const [specialRequests, setSpecialRequests] = useState('')
+
+  const handleSubmit = () => {
+    const message =
+      `🍽️ New Reservation Request\n\n` +
+      `👤 Full-Name: ${fullName}\n` +
+      `☎️ Phone: ${contactDetails}\n` +
+      `🍽️ Food: ${foodOrder || 'None'}\n` +
+      `🍹 Drinks: ${drinks || 'None'}\n` +
+      `🍨 Dessert: ${dessert || 'None'}\n` +
+      `📝 Special Requests: ${specialRequests || 'None'}`
+
+    const phone = '27788825777'
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`
+    window.open(url, '_blank')
+  }
+  
   return (
     <div className='Contact'>
     
@@ -51,38 +73,39 @@ const Contact = () => {
         <div className="form-row">
           <div className="form-group">
             <label>Full-Name</label>
-            <input type="text" placeholder="John Doe" />
+            <input value={fullName} onChange={e => setFullName(e.target.value)} placeholder="John Doe" />
           </div>
           <div className="form-group">
             <label>Contact Details</label>
-            <input type="text" placeholder="062 456..." />
+            <input value={contactDetails} onChange={e => setContactDetails(e.target.value)} placeholder="062 456..." />
           </div>
         </div>
 
         <div className="form-group">
           <label>Food Order</label>
-          <input type="text" placeholder="e.g 2 cheese burgers" />
+          <input value={foodOrder} onChange={e => setFoodOrder(e.target.value)} placeholder="e.g 2 cheese burgers" />
         </div>
 
 
         <div className="form-group">
             <label>Drinks (optional)</label>
-            <input type="text" placeholder="e.g 1 chocolate milkshake and 1 vanilla milkshake" />
+            <input value={drinks} onChange={e => setDrinks(e.target.value)} placeholder="e.g 1 chocolate milkshake and 1 vanilla milkshake" />
           </div>
 
         <div className="form-row">
           <div className="form-group">
             <label>Dessert (optional)</label>
-            <input type="text" placeholder="e.g 1 melktert" />
+            <input value={dessert} onChange={e => setDessert(e.target.value)} placeholder="e.g 1 melktert" />
           </div>
         </div>
 
         <div className="form-group">
           <label>Special Requests</label>
-          <textarea placeholder="Dietary requirements, celebrations, seating preferences..." rows={4} />
+          <textarea value={specialRequests} onChange={e => setSpecialRequests(e.target.value)} 
+          placeholder="Dietary requirements, celebrations, seating preferences..." rows={4} />
         </div>
 
-        <button className="form-btn">Order</button>
+        <button className="form-btn" onClick={handleSubmit}>Order</button>
       </div>
       </div>
       
