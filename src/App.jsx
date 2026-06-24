@@ -5,6 +5,7 @@ import Navbar from './components/navbar/Navbar'
 import Menu from './components/menu/Menu'
 import Testimonials from './components/testimonials/Testimonials'
 import Contact from './components/contact/Contact'
+import Footer from './components/footer/Footer'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
       <Menu/>
       <Testimonials/>
       <Contact/>
+      <Footer/>
    </>
   )
 }

@@ -14,13 +14,13 @@ const Contact = () => {
 
   const handleSubmit = () => {
     const message =
-      `🍽️ New Reservation Request\n\n` +
-      `👤 Full-Name: ${fullName}\n` +
-      `☎️ Phone: ${contactDetails}\n` +
-      `🍽️ Food: ${foodOrder || 'None'}\n` +
-      `🍹 Drinks: ${drinks || 'None'}\n` +
-      `🍨 Dessert: ${dessert || 'None'}\n` +
-      `📝 Special Requests: ${specialRequests || 'None'}`
+      `New Reservation Request\n\n` +
+      `Full-Name: ${fullName}\n` +
+      `Phone: ${contactDetails}\n` +
+      `Food: ${foodOrder || 'None'}\n` +
+      `Drinks: ${drinks || 'None'}\n` +
+      `Dessert: ${dessert || 'None'}\n` +
+      `Special Requests: ${specialRequests || 'None'}`
 
     const phone = '27788825777'
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`
