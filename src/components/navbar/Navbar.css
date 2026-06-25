@@ -62,3 +62,10 @@ nav span{
     backdrop-filter: blur(10px);
     transition: ease-in-out 0.5s;
 }
+
+@media (max-width: 480px) {
+
+  nav{
+    display: none;
+  }
+}
