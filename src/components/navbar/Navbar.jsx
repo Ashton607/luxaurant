@@ -30,7 +30,6 @@ const Navbar = () => {
 
   const closeMenu = () => setMenuOpen(false);
 
-
   return (
     <nav  className={`${sticky ? 'blur-nav' : ''}`} ref={navRef}>
     <h2>lux<span>au</span>rant</h2>
