@@ -330,3 +330,133 @@
 .chalk-board-specials ul li:last-child{
   border-bottom: none;
 }
+
+
+/* ── 768px (Tablet) ── */
+@media (max-width: 768px) {
+
+  .Menu {
+    padding: 4rem 1.5rem;
+  }
+
+  .menu-title {
+    font-size: 2.8rem;
+  }
+
+  .menu-subtitle {
+    font-size: 0.9rem;
+    padding: 0 1rem;
+  }
+
+  .menu-categories ul {
+    padding: 0.8rem 1rem;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .menu-categories ul li {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+  }
+
+  .menu-categories-content {
+    padding: 2rem 1rem;
+  }
+
+  .pizza-content,
+  .burger-content,
+  .pie-content,
+  .dessert-content,
+  .drinks-content,
+  .specials-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .chalk-board {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .chalk-board-specials {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+
+/* ── 480px (Mobile) ── */
+@media (max-width: 480px) {
+
+  .Menu {
+    padding: 3rem 1rem;
+  }
+
+  .menu-badge {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    margin-top: 20%;
+  }
+
+  .menu-badge::before,
+  .menu-badge::after {
+    width: 24px;
+  }
+
+  .menu-title {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  .menu-subtitle {
+    font-size: 0.82rem;
+    padding: 0 0.5rem;
+    line-height: 1.6;
+  }
+
+  .menu-categories {
+    margin: 1.5rem 0;
+  }
+
+  .menu-categories ul {
+    padding: 0.6rem 0.5rem;
+    gap: 0.3rem;
+    justify-content: space-between;
+  }
+
+  .menu-categories ul li {
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    padding: 0.3rem 0;
+  }
+
+  .menu-categories-content {
+    padding: 1.5rem 0.5rem;
+    min-height: 80vh;
+    max-width: 80vh;
+  }
+
+  .chalk-board {
+    width: 100%;
+    padding: 1.5rem 1.2rem;
+    box-sizing: border-box;
+  }
+
+  .chalk-board-specials {
+    width: 100%;
+    padding: 1.5rem 1.2rem;
+    box-sizing: border-box;
+  }
+
+  .chalk-board > span,
+  .chalk-board-specials > span {
+    font-size: 1.4rem;
+  }
+
+  .chalk-board ul li,
+  .chalk-board-specials ul li {
+    font-size: 1rem;
+  }
+}
