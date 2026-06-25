@@ -140,3 +140,90 @@
 .footer-credit a:hover {
   color: #C97A3A;
 }
+
+/* ── 768px (Tablet) ── */
+@media (max-width: 768px) {
+
+  .Footer {
+    padding: 3rem 2rem 0;
+  }
+
+  .footer-content {
+    gap: 2.5rem;
+  }
+
+  .footer-brand {
+    flex: unset;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .footer-col {
+    min-width: 120px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1.2rem 0;
+  }
+}
+
+
+/* ── 480px (Mobile) ── */
+@media (max-width: 480px) {
+
+  .Footer {
+    padding: 2.5rem 1.2rem 0;
+  }
+
+  .footer-content {
+    flex-direction: column;  /* stack all columns */
+    gap: 2rem;
+  }
+
+  .footer-brand {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .footer-brand h2 {
+    font-size: 1.5rem;
+  }
+
+  .footer-brand p {
+    font-size: 0.8rem;
+  }
+
+  .footer-col {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .footer-col h3 {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+  }
+
+  .footer-col ul li {
+    font-size: 0.8rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.4rem;
+    text-align: center;
+    margin-top: 1.5rem;
+    padding: 1rem 0;
+  }
+
+  .footer-bottom p {
+    font-size: 0.68rem;
+  }
+
+  .footer-credit a {
+    font-size: 0.68rem;
+  }
+}
