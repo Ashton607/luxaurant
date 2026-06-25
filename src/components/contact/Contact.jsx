@@ -8,8 +8,11 @@ const Contact = () => {
   const [fullName, setFullName] = useState('')
   const [contactDetails, setContactDetails] = useState('')
   const [foodOrder, setFoodOrder] = useState('')
+  const [foodQty, setFoodQty] = useState('')
   const [drinks, setDrinks] = useState('')
+  const [drinksQty, setDrinksQty] = useState('')
   const [dessert, setDessert] = useState('')
+  const [dessertQty, setDessertQty] = useState('')
   const [specialRequests, setSpecialRequests] = useState('')
 
   const handleSubmit = () => {
@@ -18,8 +21,11 @@ const Contact = () => {
       `Full-Name: ${fullName}\n` +
       `Phone: ${contactDetails}\n` +
       `Food: ${foodOrder || 'None'}\n` +
+      `Food Qty: ${foodQty || 'None'}\n` +
       `Drinks: ${drinks || 'None'}\n` +
+      `Drinks Qty: ${drinksQty || 'None'}\n` +
       `Dessert: ${dessert || 'None'}\n` +
+      `Dessert Qty: ${dessertQty || 'None'}\n` +
       `Special Requests: ${specialRequests || 'None'}`
 
     const phone = '27788825777'
@@ -81,21 +87,37 @@ const Contact = () => {
           </div>
         </div>
 
+
+        <div className="form-row">
         <div className="form-group">
-          <label>Food Order</label>
-          <input value={foodOrder} onChange={e => setFoodOrder(e.target.value)} placeholder="e.g 2 cheese burgers" />
+          <label>Food</label>
+          <input value={foodOrder} onChange={e => setFoodOrder(e.target.value)} placeholder="e.g cheese burger" />
+        </div>
+        <div className="form-group">
+          <label>Food (Qty)</label>
+          <input value={foodQty} onChange={e => setFoodQty(e.target.value)} placeholder="e.g 2" />
+        </div>
         </div>
 
-
+        <div className="form-row">
         <div className="form-group">
-            <label>Drinks (optional)</label>
-            <input value={drinks} onChange={e => setDrinks(e.target.value)} placeholder="e.g 1 chocolate milkshake and 1 vanilla milkshake" />
+            <label>Drinks</label>
+            <input value={drinks} onChange={e => setDrinks(e.target.value)} placeholder="e.g chocolate milkshake" />
           </div>
+          <div className="form-group">
+            <label>Drinks (Qty)</label>
+            <input value={drinksQty} onChange={e => setDrinksQty(e.target.value)} placeholder="e.g 2" />
+          </div>
+        </div>
 
         <div className="form-row">
           <div className="form-group">
-            <label>Dessert (optional)</label>
-            <input value={dessert} onChange={e => setDessert(e.target.value)} placeholder="e.g 1 melktert" />
+            <label>Dessert</label>
+            <input value={dessert} onChange={e => setDessert(e.target.value)} placeholder="e.g melktert" />
+          </div>
+          <div className="form-group">
+            <label>Dessert (Qty)</label>
+            <input value={dessertQty} onChange={e => setDessertQty(e.target.value)} placeholder="e.g 4" />
           </div>
         </div>
 

@@ -2,6 +2,7 @@ import React from 'react'
 import './Footer.css'
 import { FaInstagram, FaFacebook, FaTiktok } from 'react-icons/fa'
 import { IoLocationOutline, IoCallOutline, IoMailOutline } from 'react-icons/io5'
+import { IoIosShareAlt } from "react-icons/io";
 
 const Footer = () => {
   return (
@@ -63,7 +64,7 @@ const Footer = () => {
         <p>© {new Date().getFullYear()} Luxaurant. All rights reserved.</p>
         <p className="footer-credit">
           <a href="https://ashton607.github.io/Lux/" target="_blank" rel="noopener noreferrer">
-          Made with Lux</a></p>
+          Made with Lux <IoIosShareAlt style={{marginTop:'5px'}} /></a></p>
       </div>
 
     </footer>
