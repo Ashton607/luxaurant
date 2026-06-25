@@ -244,3 +244,126 @@
 .form-btn:hover {
   background: #b56a2e;
 }
+
+/* ── 768px (Tablet) ── */
+@media (max-width: 768px) {
+
+  .Contact {
+    padding: 4rem 1.5rem;
+  }
+
+  .contact-title {
+    font-size: 2.8rem;
+  }
+
+  .contact-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .left-right {
+    flex-direction: column;  /* stack left and right */
+    padding: 3rem 1.5rem;
+    gap: 2rem;
+    min-height: unset;
+  }
+
+  .contact-left {
+    width: 100%;
+    margin-bottom: 0;
+    align-items: flex-start;
+  }
+
+  .contact-right {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .form-btn {
+    width: 70%;
+    margin-left: 15%;
+  }
+}
+
+
+/* ── 480px (Mobile) ── */
+@media (max-width: 480px) {
+
+  .Contact {
+    padding: 3rem 1rem;
+  }
+
+  .contact-badge {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+  }
+
+  .contact-badge::before,
+  .contact-badge::after {
+    width: 24px;
+  }
+
+  .contact-title {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  .contact-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .contact-subtitle-2 {
+    font-size: 0.82rem;
+  }
+
+  .contact-left-subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 0.3em;
+  }
+
+  .left-right {
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .contact-right {
+    padding: 1.5rem 1rem;
+    gap: 1rem;
+  }
+
+  .form-title {
+    font-size: 1.2rem;
+  }
+
+  .form-row {
+    flex-direction: column;  /* stack first/last name and date/guests */
+    gap: 1rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 0.85rem;
+    padding: 0.65rem 0.8rem;
+  }
+
+  .form-group label {
+    font-size: 0.65rem;
+  }
+
+  .form-btn {
+    width: 100%;
+    margin-left: 0;
+    font-size: 0.85rem;
+  }
+
+  .location-time h2,
+  .contact-info h2 {
+    font-size: 0.85rem;
+  }
+
+  .location-time p,
+  .contact-info p {
+    font-size: 0.78rem;
+    padding-left: 1.2rem;
+  }
+}
