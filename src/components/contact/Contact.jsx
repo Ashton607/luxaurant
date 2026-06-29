@@ -3,6 +3,7 @@ import './Contact.css'
 import { IoLocationOutline, IoTimeOutline, IoCallOutline } from 'react-icons/io5'
 import { SiGmail } from "react-icons/si";
 import { FaWhatsapp } from "react-icons/fa";
+import { LuSendHorizontal } from "react-icons/lu";
 
 const Contact = () => {
   const [fullName, setFullName] = useState('')
@@ -14,8 +15,47 @@ const Contact = () => {
   const [dessert, setDessert] = useState('')
   const [dessertQty, setDessertQty] = useState('')
   const [specialRequests, setSpecialRequests] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [file, setFile] = useState(null)
+  const [preview, setPreview] = useState(null)
 
-  const handleSubmit = () => {
+ 
+ 
+  const handleImageChange = (e) => {
+    const selected = e.target.files[0]
+    setFile(selected)
+    setPreview(URL.createObjectURL(selected)) // shows preview
+  }
+
+  const handleCancelImage = () => {
+  setFile(null)
+  setPreview(null)
+  document.getElementById('fileInput').value = '' // resets the input
+}
+
+  const uploadImage = async (file) => {
+  const formData = new FormData()
+  formData.append('file', file)
+  formData.append('upload_preset', 'luxaurant') // set in Cloudinary dashboard
+
+  const res = await fetch('https://api.cloudinary.com/v1_1/drtb5zhbe/image/upload', {
+    method: 'POST',
+    body: formData
+  })
+  const data = await res.json()
+  return data.secure_url // this is the image link
+}
+
+  const handleSubmit = async () => {
+    const imageUrl = file ? await uploadImage(file) : 'No image'
+
+    if (!fullName || !foodOrder) {
+      alert('Please fill in your name and order.')
+      return
+    }
+
+     setLoading(true)
+
     const message =
       `New Reservation Request\n\n` +
       `Full-Name: ${fullName}\n` +
@@ -26,11 +66,14 @@ const Contact = () => {
       `Drinks Qty: ${drinksQty || 'None'}\n` +
       `Dessert: ${dessert || 'None'}\n` +
       `Dessert Qty: ${dessertQty || 'None'}\n` +
+      `Reference Image: ${imageUrl}\n` +
       `Special Requests: ${specialRequests || 'None'}`
 
     const phone = '27788825777'
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`
     window.open(url, '_blank')
+
+    setLoading(false)
   }
   
   return (
@@ -122,12 +165,31 @@ const Contact = () => {
         </div>
 
         <div className="form-group">
+          <label>Image Reference</label>
+          <div className="image-upload" onClick={() => !preview && document.getElementById('fileInput').click()}>
+    {preview ? (
+      <>
+        <img src={preview} alt="preview" className="image-preview" />
+        <button className="cancel-image" onClick={(e) => { e.stopPropagation(); handleCancelImage() }}>
+          ✕ Remove Image
+        </button>
+      </>
+    ) : (
+      <span>Click to upload image</span>
+    )}
+  </div>
+          <input id='fileInput' type='file' accept='image/*' style={{display:'none'}} onChange={handleImageChange}/>
+        </div>
+
+        <div className="form-group">
           <label>Special Requests</label>
           <textarea value={specialRequests} onChange={e => setSpecialRequests(e.target.value)} 
           placeholder="Dietary requirements, celebrations, seating preferences..." rows={4} />
         </div>
 
-        <button className="form-btn" onClick={handleSubmit}>Order</button>
+        <button className="form-btn" onClick={handleSubmit} disabled={loading}>
+          {loading ? 'Uploading...' : 'Send'}<LuSendHorizontal style={{marginBottom:'-2px'}}/>
+        </button>
       </div>
       </div>
       
