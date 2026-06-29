@@ -250,9 +250,11 @@
   border: 0.5px dashed rgba(201, 122, 58, 0.4);
   border-radius: 16px;
   padding: 2rem;
-  text-align: start;
+  text-align: left;
   cursor: pointer;
   color: rgba(245, 240, 235, 0.4);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
   transition: border 0.3s ease;
 }
 
@@ -265,27 +267,6 @@
   max-height: 200px;
   object-fit: cover;
   border-radius: 6px;
-}
-
-.cancel-image {
-  margin-top: 0.75rem;
-  background: rgba(255, 255, 255, 0.06);
-  border: 0.5px solid rgba(255, 80, 80, 0.4);
-  color: rgba(255, 120, 120, 0.8);
-  border-radius: 999px;
-  padding: 4px 14px;
-  font-size: 0.75rem;
-  letter-spacing: 0.06em;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.cancel-image:hover {
-  background: rgba(255, 80, 80, 0.15);
-  border-color: rgba(255, 80, 80, 0.7);
 }
 
 /* ── 768px (Tablet) ── */
