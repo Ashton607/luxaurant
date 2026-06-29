@@ -269,6 +269,27 @@
   border-radius: 6px;
 }
 
+.cancel-image {
+  margin-top: 0.75rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 0.5px solid rgba(255, 80, 80, 0.4);
+  color: rgba(255, 120, 120, 0.8);
+  border-radius: 999px;
+  padding: 4px 14px;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cancel-image:hover {
+  background: rgba(255, 80, 80, 0.15);
+  border-color: rgba(255, 80, 80, 0.7);
+}
+
 /* ── 768px (Tablet) ── */
 @media (max-width: 768px) {
 
